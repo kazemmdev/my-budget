@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, IconButton, Stack, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { HistoryItem } from "./HistoryItem";
 
 const items = [
