@@ -1,19 +1,22 @@
-import { Box, Typography } from "@mui/material";
-
 import Head from "next/head";
-import { Histories } from "../components/History/Histories";
+import { Box, Container } from "@mui/material";
+import { Entries } from "../components/Entries/Entries";
 import { NewTransaction } from "../components/NewTransaction";
 import { IncomeBox } from "../components/IncomeBox";
 import { ExpenceBox } from "../components/ExpenceBox";
 import { BalanceBox } from "../components/BalanceBox";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
+  const entries = useSelector((state) => state.entries.entries);
+
   return (
     <>
       <Head>
         <title>My Budget App</title>
       </Head>
-      <Box
+      <Container
         component="main"
         sx={{
           py: 8,
@@ -25,9 +28,9 @@ function App() {
           <IncomeBox />
           <ExpenceBox />
         </Box>
-        <Histories />
+        <Entries entries={entries} />
         <NewTransaction />
-      </Box>
+      </Container>
     </>
   );
 }

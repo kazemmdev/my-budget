@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 
 export const ExpenceBox = () => {
+  const expences = useSelector((state) => state.entries.expences);
+
   return (
     <Box
       sx={{
@@ -13,7 +16,7 @@ export const ExpenceBox = () => {
       }}
     >
       <Typography sx={{ color: "text.secondary" }}>Expences</Typography>
-      <Typography sx={{ color: "error.main", fontSize: 34, fontWeight: "medium" }}>98.3</Typography>
+      <Typography sx={{ color: "error.main", fontSize: 34, fontWeight: "medium" }}>{expences}</Typography>
     </Box>
   );
 };
