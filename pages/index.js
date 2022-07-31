@@ -6,10 +6,17 @@ import { IncomeBox } from "../components/IncomeBox";
 import { ExpenceBox } from "../components/ExpenceBox";
 import { BalanceBox } from "../components/BalanceBox";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllEntries } from "../store/entries.actions";
 
 function App() {
-  const entries = useSelector((state) => state.entries.entries);
+  const entries = useSelector((state) => state.entries);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllEntries());
+  }, [dispatch]);
 
   return (
     <>

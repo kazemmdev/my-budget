@@ -18,7 +18,6 @@ export default (state = initialValues, action) => {
       state.incomes = evalueIncomes(state.entries);
       state.expences = evalueExpences(state.entries);
 
-      console.log(state);
       return state;
 
     case "REMOVE_ENTRY":
